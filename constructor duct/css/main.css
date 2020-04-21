@@ -1,0 +1,83 @@
+header h2, header p  {
+    text-align: center;
+}
+.title {
+    text-align: center;
+}
+.ducts {
+    margin: 0px;
+}
+.air_ducts {
+    padding: 0;
+}
+.image_ducts {
+    margin: 5px;
+    width: 140px;
+    height: 140px;
+}
+.ducts_calc {
+    margin: auto;
+    min-height: 230px;
+    width: 370px;
+    border: solid 1px grey;
+    display: flex;
+    flex-direction: column;
+}
+.duct_inform {
+    display: flex;
+    flex-direction: row;
+}
+.number_string {
+    width: 52px;
+}
+.value_number {
+    width: 190px;
+    margin: 3px;
+}
+span.value_size {
+    font-size: 14px;
+    width: 85px;
+    display: inline-block;
+}
+.size {
+    font-size: 16px;
+    margin-left: 3px;
+}
+.calc_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.result {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 10px auto;
+}
+.result_value {
+    min-width: 50px;
+    height: 26px;
+    border: solid 1px grey;
+}
+.result_value_size {
+    margin-right: 3px;
+}
+.total_results {
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+}
+.total_results p {
+    color: rgb(34, 10, 10);
+    background-color: rgb(203, 248, 250);
+    display: inline;
+}
+.empty_size {
+    font-size: 20px;
+}
+@media (min-width: 1200px) {
+    #empty_size {
+        display: none;
+    }
+}

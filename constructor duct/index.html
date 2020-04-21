@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Constructor duct</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header class="container-fluid bg-dark">
+      <h2 class="conteiner-sm bg-dark text-white" >Calculation of the square of ducts and fittings</h2>
+      <p class="conteiner-sm bg-dark text-white"> If you want to calculate the square of the ducts and fittings, use my application. 
+          To calculate, enter the data in the desired form and click the <b>"Сalculate"</b> button.
+          To summarize the data, click the <b>"To total"</b> button, and you will 
+          see the result on down of the screen. The data is presented 
+          in a table that you can copy anywhere.<br><b>Have a good time.</b></p>
+    </header>
+    <section class="row ducts">
+      <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+        <div class="ducts_calc">
+            <h5 class="title">Duct round</h5>
+            <div class="duct_inform">
+            <div class="row image_ducts"><img src="./image/duct_round.png" alt="Roundn duct">
+            </div>
+            <div class="input_value">
+                <div class="value_number">
+                    <span class="value_size">Diameter (d): </span>
+                    <input type="number" placeholder="100" class="number_string" id="diam_duct_round">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Length (L): </span>
+                    <input type="number" placeholder="1" class="number_string" id="length_duct_round">
+                    <span class="size">m</span>
+                </div>
+                <div class="calc_button">
+                    <div class="calc_duct_round">
+                        <button type="button" id="culc_round" class="btn btn-primary btn-sm button_calc" onclick="ductRound()">Calculate</button>
+                    </div>
+                    <div class="calc_duct_round">
+                        <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result">
+            <span class="result_value_size">Square = </span>
+            <div id="result_duct_round" class="result_value"></div>
+            <span  class="size"> m</sup>2</sup></span>
+        </div>
+    </div>
+    </div>
+        <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+            <div class="row ducts_calc">
+                <h5 class="title">Duct rectangular</h5>
+                <div class="duct_inform">
+          <div id="image_air_duct_flat" class="image_air"><img src="./image/duct_rectangular.png"></div>
+              <div class="input_value">
+                  <div class="value_number">
+                      <span class="value_size">Width (a): </span>
+                      <input type="number" placeholder="100" class="number_string" id="widht_duct_flat">
+                      <span class="size">mm</span>
+                  </div>
+                  <div class="value_number">
+                      <span class="value_size">Height (b): </span>
+                      <input type="number" placeholder="100" class="number_string" id="height_duct_flat">
+                      <span class="size">mm</span>
+                  </div>
+                  <div class="value_number">
+                      <span class="value_size">Length (L): </span>
+                      <input type="number" placeholder="1" class="number_string" id="length_duct_flat">
+                      <span class="size">m</span>
+                  </div>
+                  <div class="calc_button">
+                  <div class="calc_duct_round">
+                      <button type="button" id="culc_flat" class="btn btn-primary btn-sm button_calc" onclick="ductFlat()">Calculate</button>
+                  </div>
+                  <div class="calc_duct_round">
+                      <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                  </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="result">
+                      <span class="result_value_size">Square = </span>
+                      <div id="result_duct_flat" class="result_value"></div>
+                      <span  class="size"> m<sup>2</sup></span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+            <div class="row ducts_calc">
+                <h5 class="title">Cap round</h5>
+                <div class="duct_inform">
+            <div id="image_air_cap_R" class="image_air"><img src="./image/cap_round.png"></div>
+            <div class="input_value">
+                <div class="value_number">
+                    <span class="value_size">Diameter (d): </span>
+                    <input type="number" placeholder="100" class="number_string" id="diam_duct_cap_R">
+                    <span class="size">mm</span>
+                </div>
+                <div class="calc_button">
+                    <div class="calc_duct_round">
+                        <button type="button" id="culc_round" class="btn btn-primary btn-sm button_calc" onclick="ductCapR()">Calculate</button>
+                    </div>
+                    <div class="calc_duct_round">
+                        <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                    </div>
+                </div>
+            </div>
+                </div>
+            <div class="result">
+                    <span class="result_value_size">Square = </span>
+                    <div id="result_cap_R" class="result_value"></div>
+                    <span  class="size"> m<sup>2</sup></span>
+                </div>
+            </div>
+        </div>   
+        </div>
+        <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+            <div class="row ducts_calc">
+                <h5 class="title">Cap rectangular</h5>
+                <div class="duct_inform">
+            <div id="image_air_cap_L" class="image_air"><img src="./image/cap_rectangular.png"></div>
+            <div class="input_value">
+                <div class="value_number">
+                    <span class="value_size">Width (a): </span>
+                    <input type="number" placeholder="100" class="number_string" id="diam_duct_cap_L">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Height (b): </span>
+                    <input type="number" placeholder="100" class="number_string" id="diam_duct_cap_L">
+                    <span class="size">mm</span>
+                </div>
+                <div class="calc_button">
+                    <div class="calc_duct_round">
+                        <button type="button" id="culc_round" class="btn btn-primary btn-sm button_calc" onclick="ductCapL()">Calculate</button>
+                    </div>
+                    <div class="calc_duct_round">
+                        <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                    </div>
+                </div>
+            </div>
+                </div>
+            <div class="result">
+                    <span class="result_value_size">Square = </span>
+                    <div id="result_cap_L" class="result_value"></div>
+                    <span  class="size"> m<sup>2</sup></span>
+                </div>
+            </div>
+        </div>
+        </div>
+    <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+        <div class="row ducts_calc">
+            <h5 class="title">Bend round</h5>
+            <div class="duct_inform">
+    <div id="image_air_duct_round_fitting" class="image_air"><img src="./image/bend_round.png"></div>
+        <div class="input_value">
+            <div class="value_number">
+                <span class="value_size">Diameter (D): </span>
+                <input type="number" placeholder="100" class="number_string" id="diam_duct_round_fitting">
+                <span class="size">mm</span>
+            </div>
+            <div class="value_number">
+                <span class="value_size">Angle (&#x1D4B6;): </span>
+                <select name="corner" id="corner" class="corner">
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                    <option value="60">60</option>
+                    <option value="90" selected="selected">90</option>
+                </select>
+                <span class="size"><sup>o</sup></span>
+            </div>
+            <div class="calc_button">
+            <div class="calc_duct_round">
+                <button type="button" id="culc_round" class="btn btn-primary btn-sm button_calc" onclick="fittingRound()">Calculate</button>
+            </div>
+            <div class="calc_duct_round">
+                <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+            </div>
+            </div>
+        </div>
+            </div>
+       <div class="result">
+                <span class="result_value_size">Square = </span>
+                <div id="result_fitting_round" class="result_value"></div>
+                <span  class="size"> m<sup>2</sup></span>
+            </div> 
+    </div>
+        </div>
+    </div>
+    <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+        <div class="row ducts_calc">
+            <h5 class="title">Bend rectangular</h5>
+            <div class="duct_inform">
+        <div id="image_air_duct_flat_fitting" class="image_air"><img src="./image/bend_rectangular.png"></div>
+            <div class="input_value">
+                <div class="value_number">
+                    <span class="value_size">Width (a): </span>
+                    <input type="number" placeholder="100" class="number_string" id="widht_fitting_flat">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Height (b): </span>
+                    <input type="number" placeholder="100" class="number_string" id="height_fitting_flat">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Angle (&#x1D4B6;): </span>
+                    <select name="angle" id="angle" class="corner">
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                        <option value="60">60</option>
+                        <option value="90" selected="selected">90</option>
+                    </select>
+                    <span class="size"><sup>o</sup></span>
+                </div>
+                <div class="calc_button">
+                <div class="calc_duct_round">
+                    <button type="button" id="culc_flat" class="btn btn-primary btn-sm button_calc" onclick="fittingFlat()">Calculate</button>
+                </div>
+                 <div class="calc_duct_round">
+                    <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="result">
+                    <span class="result_value_size">Square = </span>
+                    <div id="result_fitting_angle" class="result_value"></div>
+                    <span  class="size"> m<sup>2</sup></span>
+                </div>
+        </div>
+        </div>
+    </div>
+    <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+        <div class="row ducts_calc">
+            <h5 class="title">Transition round</h5>
+            <div class="duct_inform">
+        <div id="image_air_fitting_round" class="image_air"><img src="./image/transition_round.png"></div>
+            <div class="input_value">
+                <div class="value_number">
+                    <span class="value_size">Diameter(D1): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_round_more">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Diameter(D2): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_round_less">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Length (L): </span>
+                    <input type="number" placeholder="300" class="number_string" id="length_fitting_round">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size"> </span>
+                    <span class="empty_size"></span>
+                    <span class="size"></span>
+                </div>
+                <div class="calc_button">
+                <div class="calc_duct_round">
+                    <button type="button" id="culc_flat" class="btn btn-primary btn-sm button_calc" onclick="fittingDoble()">Calculate</button>
+                </div>
+                <div class="calc_duct_round">
+                    <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="result">
+                    <span class="result_value_size">Square = </span>
+                    <div id="result_air_fitting_round" class="result_value"></div>
+                    <span  class="size"> m<sup>2</sup></span>
+                </div>
+        </div>    
+            </div>
+    </div>
+    <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+        <div class="row ducts_calc">
+            <h5 class="title">Transition rectangular-round</h5>
+            <div class="duct_inform">
+        <div id="image_air_fitting_round_toflat" class="image_air"><img src="./image/transition_rectangular-round.png"></div>
+            <div class="input_value">
+                <div class="value_number">
+                    <span class="value_size">Width (a): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_round_toFlat_w">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Height (b): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_round_toFlat_h">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Diameter (D): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_round_toFlatD">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Length (L): </span>
+                    <input type="number" placeholder="300" class="number_string" id="length_fitting_round_toFlat">
+                    <span class="size">mm</span>
+                </div>
+                <div class="calc_button">
+                <div class="calc_duct_round">
+                    <button type="button" id="culc_flat" class="btn btn-primary btn-sm button_calc" onclick="fittingRtoF()">Calculate</button>
+                </div>
+                <div class="calc_duct_round">
+                    <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="result">
+                    <span class="result_value_size">Square = </span>
+                    <div id="result_air_fitting_RtoF" class="result_value"></div>
+                    <span  class="size"> m<sup>2</sup></span>
+                </div>
+            </div>   
+            </div>
+        </div>
+        <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+            <div class="row ducts_calc">
+                <h5 class="title">Branch round-round</h5>
+                <div class="duct_inform">
+            <div id="image_air_fitting_teeR" class="image_air"><img src="./image/branch_round-round.png"></div>
+            <div class="input_value">
+                <div class="value_number">
+                    <span class="value_size">Diametr (D1): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_tee_d1">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Lenght (L): </span>
+                    <input type="number" placeholder="300" class="number_string" id="length_tee_L1">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Diametr (D2): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_tee_d2">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Length (l): </span>
+                    <input type="number" placeholder="300" class="number_string" id="length_tee_L2">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number" id="empty_size">
+                    <span class="value_size"> </span>
+                    <span class="empty_size"></span>
+                    <span class="size"></span>
+                </div>
+                <div class="calc_button">
+                <div class="calc_duct_round">
+                    <button type="button" id="culc_flat" class="btn btn-primary btn-sm button_calc" onclick="fittingTeeR()">Calculate</button>
+                </div>
+                <div class="calc_duct_round">
+                    <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                </div>
+                </div>
+            </div>
+                </div>
+            <div class="result">
+                    <span class="result_value_size">Square = </span>
+                    <div id="result_air_teeR" class="result_value"></div>
+                    <span  class="size"> m<sup>2</sup></span>
+                </div> 
+        </div>  
+            </div>
+        </div>
+    <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+        <div class="row ducts_calc">
+            <h5 class="title">Transition rectangular</h5>
+            <div class="duct_inform">
+        <div id="image_air_fitting_flat_toflat" class="image_air"><img src="./image/transition_rectangular.png"></div>
+            <div class="input_value">
+                <div class="value_number">
+                    <span class="value_size">Width (A): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_flat_toFlat_w1">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Height (B): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_flat_toFlat_h1">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Width (a): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_flat_toFlat_w2">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Height (b): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_flat_toFlat_h2">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Length (L): </span>
+                    <input type="number" placeholder="300" class="number_string" id="length_fitting_flat_toFlat">
+                    <span class="size">mm</span>
+                </div>
+                <div class="calc_button">
+                <div class="calc_duct_round">
+                    <button type="button" id="culc_flat" class="btn btn-primary btn-sm button_calc" onclick="fittingFtoF()">Calculate</button>
+                </div>
+                <div class="calc_duct_round">
+                    <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="result">
+                    <span class="result_value_size">Square = </span>
+                    <div id="result_air_fitting_FtoF" class="result_value"></div>
+                    <span  class="size"> m<sup>2</sup></span>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+            <div class="row ducts_calc">
+                <h5 class="title">Branch round-rectangular</h5>
+                <div class="duct_inform">
+            <div id="image_air_fitting_tee_RtoL" class="image_air"><img src="./image/branch_round-rectangular.png"></div>
+                <div class="input_value">
+                    <div class="value_number">
+                        <span class="value_size">Diameter (D): </span>
+                        <input type="number" placeholder="100" class="number_string" id="fitting_tee_RtoL_D">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size">Width (L): </span>
+                        <input type="number" placeholder="300" class="number_string" id="fitting_tee_RtoL_W1">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size">Width (a): </span>
+                        <input type="number" placeholder="100" class="number_string" id="fitting_tee_RtoL_W2">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size">Height (b): </span>
+                        <input type="number" placeholder="100" class="number_string" id="fitting_tee_RtoL_H">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size">Length (l): </span>
+                        <input type="number" placeholder="300" class="number_string" id="length_tee_RtoL_L">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="calc_button">
+                    <div class="calc_duct_round">
+                        <button type="button" id="culc_flat" class="btn btn-primary btn-sm button_calc" onclick="teeRtoL()">Calculate</button>
+                    </div>
+                    <div class="calc_duct_round">
+                        <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="result">
+                        <span class="result_value_size">Square = </span>
+                        <div id="result_air_tee_RtoL" class="result_value"></div>
+                        <span  class="size"> m<sup>2</sup></span>
+                    </div>
+            </div>   
+                </div>
+            </div>
+        <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+            <div class="row ducts_calc">
+                <h5 class="title">Branch rectangular round</h5>
+                <div class="duct_inform">
+            <div id="image_air_fitting_tee_LtoR" class="image_air"><img src="./image/branch_rectangular-round.png"></div>
+            <div class="input_value">
+                <div class="value_number">
+                    <span class="value_size">Width (a): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_tee_LtoR_W">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Height (b): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_tee_LtoR_H">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Length (L): </span>
+                    <input type="number" placeholder="300" class="number_string" id="length1_tee_LtoR">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Diameter (d): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_tee_LtoR_D">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Length (l): </span>
+                    <input type="number" placeholder="200" class="number_string" id="length2_tee_LtoR">
+                    <span class="size">mm</span>
+                </div>
+                <div class="calc_button">
+                <div class="calc_duct_round">
+                    <button type="button" id="culc_flat" class="btn btn-primary btn-sm button_calc" onclick="teeLtoR()">Calculate</button>
+                </div>
+                <div class="calc_duct_round">
+                    <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                </div>
+                </div>
+            </div>
+                </div>
+            <div class="result">
+                    <span class="result_value_size">Square = </span>
+                    <div id="result_air_fitting_LtoR" class="result_value"></div>
+                    <span  class="size"> m<sup>2</sup></span>
+                </div>
+        </div>     
+            </div>
+        </div>
+        <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3" id="ducts_tee_LtoL">
+            <div class="row ducts_calc">
+                <h5 class="title">Branch rectangular-rectangular</h5>
+                <div class="duct_inform">
+            <div id="image_air_fitting_tee_LtoL" class="image_air"><img src="./image/branch_rectangular-rectangular.png"></div>
+            <div class="input_value">
+                <div class="value_number">
+                    <span class="value_size">Width (A): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_tee_LtoL_W1">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Height (B): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_tee_LtoL_H1">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Length (L): </span>
+                    <input type="number" placeholder="300" class="number_string" id="length1_tee_LtoL_L1">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Width (a): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_tee_LtoL_W2">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Height (b): </span>
+                    <input type="number" placeholder="100" class="number_string" id="fitting_tee_LtoL_H2">
+                    <span class="size">mm</span>
+                </div>
+                <div class="value_number">
+                    <span class="value_size">Length (l): </span>
+                    <input type="number" placeholder="200" class="number_string" id="length2_tee_LtoL_L2">
+                    <span class="size">mm</span>
+                </div>
+                <div class="calc_button">
+                <div class="calc_duct_round">
+                    <button type="button" id="culc_flat" class="btn btn-primary btn-sm button_calc" onclick="teeLtoL()">Calculate</button>
+                </div>
+                <div class="calc_duct_round">
+                    <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                </div>
+                </div>
+            </div>
+                </div>
+            <div class="result">
+                    <span class="result_value_size">Square = </span>
+                    <div id="result_air_fitting_LtoL" class="result_value"></div>
+                    <span  class="size"> m<sup>2</sup></span>
+                </div>
+        </div>
+            </div>
+        </div>
+        <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+            <div class="row ducts_calc">
+                <h5 class="title">Offset in the 1st plane</h5>
+                <div class="duct_inform">
+            <div id="image_air_fitting_round_toflat" class="image_air"><img src="./image/offset_one_plane.png"></div>
+                <div class="input_value">
+                    <div class="value_number">
+                        <span class="value_size">Width (a): </span>
+                        <input type="number" placeholder="100" class="number_string" id="offset_first_w">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size">Height (b): </span>
+                        <input type="number" placeholder="100" class="number_string" id="offset_first_h">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size">Length (l): </span>
+                        <input type="number" placeholder="300" class="number_string" id="offset_first_l">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size">Shift (h): </span>
+                        <input type="number" placeholder="100" class="number_string" id="offset_first_Sh">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size"> </span>
+                        <span class="empty_size"></span>
+                        <span class="size"></span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size"> </span>
+                        <span class="empty_size"></span>
+                        <span class="size"></span>
+                    </div>
+                    <div class="calc_button">
+                    <div class="calc_duct_round">
+                        <button type="button" id="culc_flat" class="btn btn-primary btn-sm button_calc" onclick="offsetFirst()">Calculate</button>
+                    </div>
+                    <div class="calc_duct_round">
+                        <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="result">
+                        <span class="result_value_size">Square = </span>
+                        <div id="offset_first" class="result_value"></div>
+                        <span  class="size"> m<sup>2</sup></span>
+                    </div>
+                </div>   
+                </div>
+            </div>
+            <div class="air_ducts col-xl-4 col-lg-6 col-md-6 col-sm-12 pt-3">
+                <div class="row ducts_calc">
+                    <h5 class="title">Offset in two planes</h5>
+                    <div class="duct_inform">
+                <div id="image_air_fitting_tee_LtoR" class="image_air"><img src="./image/offset_two_plane.png"></div>
+                <div class="input_value">
+                    <div class="value_number">
+                        <span class="value_size">Width (a): </span>
+                        <input type="number" placeholder="100" class="number_string" id="offset_two_w">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size">Height (b): </span>
+                        <input type="number" placeholder="100" class="number_string" id="offset_two_h">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size">Length (L): </span>
+                        <input type="number" placeholder="300" class="number_string" id="offset_two_l">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size">Shift (h1): </span>
+                        <input type="number" placeholder="100" class="number_string" id="offset_two_h1">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size">Shift (h2): </span>
+                        <input type="number" placeholder="100" class="number_string" id="offset_two_h2">
+                        <span class="size">mm</span>
+                    </div>
+                    <div class="value_number">
+                        <span class="value_size"> </span>
+                        <span class="empty_size"></span>
+                        <span class="size"></span>
+                    </div>
+                    <div class="calc_button">
+                    <div class="calc_duct_round">
+                        <button type="button" id="culc_flat" class="btn btn-primary btn-sm button_calc" onclick="offsetTwo()">Calculate</button>
+                    </div>
+                    <div class="calc_duct_round">
+                        <button class="btn btn-success btn-sm button_calc" onclick="showTotal()">To total</button>
+                    </div>
+                    </div>
+                </div>
+                    </div>
+                <div class="result">
+                        <span class="result_value_size">Square = </span>
+                        <div id="offset_two" class="result_value"></div>
+                        <span  class="size"> m<sup>2</sup></span>
+                    </div>
+            </div>     
+                </div>
+            </div>
+    </section>
+    <aside class="conteiner-fluid">
+        <div class="total_result" id="total">
+            <table class="table table-striped">
+            </table>
+            <div class="total_results"><span>Total result: </span><p id="result"> 0.00</p><span> m<sup>2</sup></span>
+        </div>
+    </div>
+    </aside>
+    <footer class="container-fluid p-3 my-3 bg-dark text-white">
+        All Rights Reserved. Copyright © 2020. Produсed by Ihor Haidai
+    </footer>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
